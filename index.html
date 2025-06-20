@@ -19,28 +19,120 @@
   </style>
 </head>
 <body class="bg-gradient-to-br from-white via-lime-100 to-emerald-50 dark:from-zinc-900 dark:to-zinc-800 text-gray-800 dark:text-lime-100 min-h-screen transition-all duration-300">  
-    <div class="max-w-6xl mx-auto p-6">
-      <!-- Header -->
-         <div class="max-w-6xl mx-auto px-6 sm:px-10">
-      <div class="text-center mb-14">
-        <h1 class="text-5xl font-extrabold text-teal-700 dark:text-teal-300 tracking-tight mb-2">Menjual Mobil</h1>
-        <p class="text-gray-600 dark:text-gray-300 text-lg">Mobil bagus dan baru</p>
-      </div>
-      
-      <div class="flex justify-between items-center mb-10">
-        <div class="flex items-center gap-4">
-          <div class="w-16 h-16 rounded-full overflow-hidden border-4 border-lime-500">
-            <img src="foto gua.jpeg" alt="Foto Dias" class="object-cover object-top w-full h-full">
-          </div>
-          
-          <div>
-            <h1 class="text-3xl font-bold text-lime-600 dark:text-lime-300">Silahkan isi form Pembayaran anda</h1>
-            <p class="text-sm leading-5">Fatsyah Wijaya Mulya</p>
-          </div>
+  <div class="max-w-6xl mx-auto p-6">
+    <!-- Header -->
+       <div class="max-w-6xl mx-auto px-6 sm:px-10">
+    <div class="text-center mb-14">
+      <h1 class="text-5xl font-extrabold text-teal-700 dark:text-teal-300 tracking-tight mb-2">Menjual Mobil</h1>
+      <p class="text-gray-600 dark:text-gray-300 text-lg">Mobil bagus dan baru</p>
+    </div>
+    
+    <div class="flex justify-between items-center mb-10">
+      <div class="flex items-center gap-4">
+        <div class="w-16 h-16 rounded-full overflow-hidden border-4 border-lime-500">
+          <img src="foto gua.jpeg" alt="Foto Dias" class="object-cover object-top w-full h-full">
         </div>
-        <button id="toggleDarkMode" class="px-4 py-2 rounded-lg bg-lime-600 text-white hover:bg-lime-700 dark:bg-yellow-400 dark:text-black dark:hover:bg-yellow-300 transition">Toggle Mode</button>
+        
+        <div>
+          <h1 class="text-3xl font-bold text-lime-600 dark:text-lime-300">Silahkan isi form Pembayaran anda</h1>
+          <p class="text-sm leading-5">Fatsyah Wijaya Mulya</p>
+        </div>
+      </div>
+      <button id="toggleDarkMode" class="px-4 py-2 rounded-lg bg-lime-600 text-white hover:bg-lime-700 dark:bg-yellow-400 dark:text-black dark:hover:bg-yellow-300 transition">Toggle Mode</button>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8">
+      <!-- Form Pembayaran -->
+      <div class="bg-white dark:bg-zinc-900 shadow-xl rounded-2xl p-8">
+        <h2 class="text-xl font-semibold mb-6 flex items-center gap-2 text-lime-700 dark:text-lime-200">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+          Forum Pembayaran
+        </h2>
+        <form id="paymentForm" class="space-y-4">
+          <div>
+            <label for="customerName" class="block font-medium">Nama Pelanggan</label>
+            <input id="customerName" name="customerName" type="text" placeholder="Masukkan nama pelanggan" class="w-full mt-1 px-4 py-2 border rounded-lg focus:ring-lime-400 focus:border-lime-400 dark:bg-zinc-800" required />
+          </div>
+          <div>
+            <label for="customerEmail" class="block font-medium">Email</label>
+            <input id="customerEmail" name="customerEmail" type="email" placeholder="contoh@email.com" class="w-full mt-1 px-4 py-2 border rounded-lg focus:ring-lime-400 focus:border-lime-400 dark:bg-zinc-800" required />
+          </div>
+          <div>
+            <label for="productSelect" class="block font-medium">Pilih Produk/Layanan</label>
+            <select id="productSelect" name="product" class="w-full mt-1 px-4 py-2 border rounded-lg dark:bg-white dark:text-black" required>
+              <option value="">Silahkan pilih Mobil yang ada pilih</option>
+              <option value="basic" data-price="47000">Mitsubisi x pander - Rp 70.000.000</option>
+              <option value="premium" data-price="65000">Toyota new avanza - Rp 65.000.000</option>
+              <option value="professional" data-price="65000">Honda civic - Rp 60.000.000</option>
+              <option value="enterprise" data-price="50000">Daihatsu xenia - Rp 50.000.000</option>
+            </select>
+          </div>
+          <div>
+            <label for="quantity" class="block font-medium">Jumlah</label>
+            <input id="quantity" name="quantity" type="number" min="1" value="1" class="w-full mt-1 px-4 py-2 border rounded-lg focus:ring-lime-400 focus:border-lime-400 dark:bg-zinc-800" required />
+          </div>
+          <div>
+            <label class="block font-medium">Metode Pembayaran</label>
+            <div class="space-y-2 mt-1">
+              <label class="flex items-center gap-2"><input type="radio" name="paymentMethod" value="transfer"> Transfer Bank</label>
+              <label class="flex items-center gap-2"><input type="radio" name="paymentMethod" value="ewallet"> E-Wallet</label>
+              <label class="flex items-center gap-2"><input type="radio" name="paymentMethod" value="credit"> Kartu Kredit</label>
+              <label class="flex items-center gap-2"><input type="radio" name="paymentMethod" value="cash"> Tunai</label>
+            </div>
+          </div>
+          <div>
+            <label for="promoCode" class="block font-medium">Kode Promo</label>
+            <div class="flex gap-2 mt-1">
+              <input id="promoCode" name="promoCode" type="text" placeholder="Masukkan kode promo" class="flex-1 px-4 py-2 border rounded-lg dark:bg-zinc-800" />
+              <button type="button" id="applyPromoBtn" class="px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700">Terapkan</button>
+            </div>
+            <div id="promoMessage" class="text-sm mt-1 hidden"></div>
+          </div>
+          <div class="bg-lime-50 dark:bg-zinc-700 rounded-lg p-4">
+            <div class="flex justify-between text-sm">
+              <span>Subtotal:</span><span id="subtotal">Rp 0</span>
+            </div>
+            <div id="discountRow" class="flex justify-between text-sm text-lime-600 hidden">
+              <span>Diskon:</span><span id="discount">Rp 0</span>
+            </div>
+            <div class="flex justify-between font-bold mt-2">
+              <span>Total:</span><span id="totalAmount">Rp 0</span>
+            </div>
+          </div>
+          <button type="submit" class="w-full py-3 rounded-lg bg-gradient-to-r from-lime-500 to-lime-700 text-white font-bold hover:from-lime-600 hover:to-lime-800">Proses Pembayaran</button>
+        </form>
       </div>
 
-      
+      <!-- Riwayat Transaksi -->
+      <div class="bg-white dark:bg-zinc-900 shadow-xl rounded-2xl p-8">
+        <h2 class="text-xl font-semibold mb-6 flex items-center gap-2 text-yellow-600 dark:text-yellow-300">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+          Riwayat Transaksi
+        </h2>
+        <div class="grid grid-cols-3 gap-4 mb-6">
+          <div class="bg-lime-100 dark:bg-lime-900 text-center py-4 rounded-lg">
+            <div class="text-2xl font-bold" id="totalTransactions">0</div>
+            <div class="text-sm">Transaksi</div>
+          </div>
+          <div class="bg-amber-100 dark:bg-amber-900 text-center py-4 rounded-lg">
+            <div class="text-2xl font-bold" id="totalRevenue">Rp 0</div>
+            <div class="text-sm">Pendapatan</div>
+          </div>
+          <div class="bg-cyan-100 dark:bg-cyan-900 text-center py-4 rounded-lg">
+            <div class="text-2xl font-bold" id="avgTransaction">Rp 0</div>
+            <div class="text-sm">Rata-rata</div>
+          </div>
+        </div>
+        <div id="transactionList" class="space-y-3 max-h-96 overflow-y-auto"></div>
+        <div id="emptyState" class="text-center text-gray-500 py-8">
+          <p class="text-sm">Belum ada transaksi</p>
+        </div>
+        <button id="clearHistoryBtn" class="mt-4 w-full py-2 bg-red-500 text-white rounded-lg hidden">Hapus Semua Riwayat</button>
+      </div>
+    </div>
+  </div>
+
+  
+
 </body>
 </html>
