@@ -77,12 +77,6 @@ Aplikasi ini adalah proyek UAS untuk mata kuliah **Pemrograman Web**. Sistem ini
 
 ---
 
-## 📸 Screenshot
-
-> *(Tambahkan gambar jika ada untuk menunjukkan UI)*
-
----
-
 ## 📃 Lisensi
 
 Proyek ini dibuat untuk keperluan akademik dan tidak untuk digunakan secara komersial.
